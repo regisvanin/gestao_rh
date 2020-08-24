@@ -99,7 +99,7 @@ STATICFILES_DIRS = [
 ]
 
 # utilizado para deploy
-#STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 
