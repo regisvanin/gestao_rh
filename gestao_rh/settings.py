@@ -94,9 +94,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # definir o local dos arquivos CSS -- pode ter varios diretorios de static so passando os os.path.join(), pode ser utilizado o caminho absoluto tb
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 
 # utilizado para deploy
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
