@@ -2,6 +2,8 @@
 
 vim uwsgi_gestao_rh.service
 
+
+--
 [Unit]
 Description=uWSGI Emperor
 After=syslog.target
@@ -18,7 +20,7 @@ User=ubuntu
 
 [Install]
 WantedBy=multi-user.target
-
+--
 
 sudo chmod -664 /etc/systemd/system/uwsgi_gestao_rh.service
 
