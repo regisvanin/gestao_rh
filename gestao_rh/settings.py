@@ -93,16 +93,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images) - utilizado somente para montar o caminho..
 STATIC_URL = '/static/'
 
-if DEBUG:
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+#if DEBUG:
+#    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
+#else:
+#    STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # definir o local dos arquivos CSS -- pode ter varios diretorios de static so passando os os.path.join(), pode ser utilizado o caminho absoluto tb
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 
 # utilizado para deploy
-#STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 MEDIA_URL = '/media/'
 

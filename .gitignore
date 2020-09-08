@@ -4,3 +4,4 @@ venv
 gestao_rh/__pycache__/
 *.pyc
 *.pem
+static
