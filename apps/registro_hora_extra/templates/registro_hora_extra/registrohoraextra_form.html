@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
+{% load static %}
 {% block main %}
 
 
@@ -9,11 +10,21 @@
     <button type="submit" class="btn btn-info btn-sm">Salvar</button>
 
     {% if object %}
-    <a href="{% url 'delete_hora_extra' object.id  %}" class="btn btn-danger btn-sm">Deletar</a>
-    <!--<a href="{% url 'update_funcionario' object.funcionario.id %}" class="btn btn-info btn-sm">Voltar</a> -->
+        <a href="{% url 'delete_hora_extra' object.id  %}" class="btn btn-danger btn-sm">Deletar</a>
+        <!--<a href="{% url 'update_funcionario' object.funcionario.id %}" class="btn btn-info btn-sm">Voltar</a> -->
+        <button onclick="utilizouHoraExtra({{ object.id }})" type="button" class="btn btn-info btn-sm">Utilizar Hora Extra</button>
+        <button onclick="desutilizarHoraExtra({{ object.id }})" type="button" class="btn btn-danger btn-sm">Voltar Hora Extra</button>
     {% endif %}
 
 </form>
-
 <br>
+<span class="badge badge-info">Total Horas: {{ object.funcionario.total_horas_extra }}</span>
+<h2 id="horas_atualizadas" class="badge badge-success"></h2>
+<p id="mensagem" class=""></p>
+
+{% endblock %}
+
+{% block static %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/funcoes-ajax.js' %}"></script>
 {% endblock %}

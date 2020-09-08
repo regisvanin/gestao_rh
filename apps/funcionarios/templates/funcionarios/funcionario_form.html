@@ -24,6 +24,7 @@
     <tr>
         <th> Motivo </th>
         <th> Horas </th>
+        <th> Utilizada </th>
     </tr>
     {% for registro_hora in object.registrohoraextra_set.all %}
     <tr>
@@ -31,11 +32,13 @@
             <a href="{% url 'update_hora_extra' registro_hora.id %}">{{ registro_hora.motivo }} </a>
         </td>
         <td> {{ registro_hora.horas }}  </td>
+        <td> <input class="radio" type="radio" value=1 {% if registro_hora.utilizada %} checked {% endif %} disabled="yes"></td>
     </tr>
     {% endfor %}
     <tr>
         <th> Total de Horas </th>
         <th> {{ object.total_horas_extra }} </th>
+        <th>  </th>
     </tr>
 </table>
 <br>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block staticcss %}
+    <style>
+        .text_red { color: red }
+    </style>
+{% endblock %}
+
+{% block main %}
+    <h1 class="text_red">Meu Relatório</h1>
+    <h2>{{ sales }}</h2>
+
+<a href="{% url 'pdf_html' %}" class="btn btn-info">Rel. Funcionarios Html</a>
+{% endblock %}

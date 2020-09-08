@@ -11,8 +11,10 @@
         </a>
     <br>
     {% endfor %}
-    <a href="{% url 'create_funcionario' %}" class="btn btn-info">
-            Novo
-    </a>
+    <br>
+    <a href="{% url 'create_funcionario' %}" class="btn btn-info"> Novo </a>
+    <a href="{% url 'pdf_reportlab' %}" class="btn btn-info">Rel. de Funcionarios</a>
+    <a href="{% url 'pdf_html' %}" class="btn btn-info">Rel. Funcionarios Html</a>
+    <a href="{% url 'pdf_html_debug' %}" class="btn btn-danger">Rel. Funcionarios Debug Html</a>
 
 {% endblock %}

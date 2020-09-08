@@ -1,24 +1,34 @@
 {% extends 'base.html' %}
 
 {% block main %}
-
-    Banco de Horas
-    <br>
+    <h3>Banco de Horas</h3>
+    <table>
+        <tr>
+            <th>Motivo Hora Extra</th>
+            <th></th>
+        </tr>
     {% for registro_re in object_list %}
-        <a href="{% url 'update_hora_extra_base' registro_re.id %}" class="btn btn-light btn-sm">
-            {{ registro_re }}
-        </a>
-        <a href="{% url 'delete_hora_extra' registro_re.id  %}" class="btn btn-danger btn-sm">
-            Deletar
-        </a>
-    <br>
+
+        <tr>
+            <td>
+                <a href="{% url 'update_hora_extra_base' registro_re.id %}" class="btn btn-light btn-sm">
+                    {{ registro_re }}
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'delete_hora_extra' registro_re.id  %}" class="btn btn-danger btn-sm">
+                    Deletar
+                </a>
+            </td>
+        </tr>
     {% endfor %}
+    </table>
 
     {% if not object_list %}
         <h3>Não existem registros de horas extras no banco de dados.</h3>
     {% endif %}
-    <a href="{% url 'create_hora_extra' %}" class="btn btn-info btn-sm">
-            Novo
-    </a>
+    <a href="{% url 'create_hora_extra' %}" class="btn btn-info btn-sm">Novo</a>
+    <a href="{% url 'exportar_csv' %}" class="btn btn-info btn-sm">Exportar CSV</a>
+    <a href="{% url 'exportar_excel' %}" class="btn btn-info btn-sm">Exportar EXCEL</a>
 
 {% endblock %}
