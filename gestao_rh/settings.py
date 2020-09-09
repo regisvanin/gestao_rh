@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'apps.registro_hora_extra',
     'apps.core',
     'bootstrapform',
+    'apps.app_antiga',
 ]
 
 MIDDLEWARE = [
@@ -63,8 +64,22 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'antigo': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'dbantigo.sqlite3',
+    },
+    'oracle': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'arius',
+        'USER': 'ariuspy',
+        'PASSWORD': 'automa',
+        'HOST': '192.168.1.233',
+        'PORT': '1521',
     }
 }
+
+DATABASE_ROUTERS = ['gestao_rh.DBRoutes.DBRoutes']
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
