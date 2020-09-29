@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'apps.core',
     'bootstrapform',
     'apps.app_antiga',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # local onde será redirecionado depois que o login for executado / url onde vai ir depois do logout
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
+
+CELERY_RESULT_BACKEND = 'django-db'
+# Celery application definition
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
