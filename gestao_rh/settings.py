@@ -19,8 +19,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'rest_framework.authtoken',
     'apps.empresas',
     'apps.funcionarios',
     'apps.departamentos',
@@ -30,6 +28,8 @@ INSTALLED_APPS = [
     'bootstrapform',
     'apps.app_antiga',
     'django_celery_results',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -71,14 +71,6 @@ DATABASES = {
     'antigo': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'dbantigo.sqlite3',
-    },
-    'oracle': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'arius',
-        'USER': 'ariuspy',
-        'PASSWORD': 'automa',
-        'HOST': '192.168.1.233',
-        'PORT': '1521',
     }
 }
 

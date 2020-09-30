@@ -6,7 +6,6 @@ class DocumentoCreate(CreateView):
     model = Documento
     fields = ['descricao', 'arquivo']
 
-    # overhide passando oport na tela.
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         form.instance.pertence_id = self.kwargs['funcionario_id']

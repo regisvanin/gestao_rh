@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
+
 {% block main %}
-
-
 <form method="post">
     {% csrf_token %}
     {{ form|bootstrap }}
@@ -13,11 +12,15 @@
 <h2>Documentos</h2>
 <ul>
     {% for documento in object.documento_set.all %}
-        <li>  <a href="{{ documento.arquivo.url }}">{{ documento.descricao }} </a><br> </li>
+    <li>  <a href="{{ documento.arquivo.url }}">{{ documento.descricao }} </a><br> </li>
     {% endfor %}
 </ul>
-<a href="{% url 'create_documento' object.id %}" class="btn btn-success">Adicionar Documento</a>
 <br>
+
+{% if object %}
+<a href="{% url 'create_documento' object.id %}" class="btn btn-success">Adicionar Documento</a>
+{% endif %}
+
 <br>
 <h2>Banco de Horas</h2>
 <table>
@@ -43,5 +46,6 @@
 </table>
 <br>
 <a href="{% url 'create_hora_extra' %}" class="btn btn-success">Adicionar Hora</a>
+
 
 {% endblock %}

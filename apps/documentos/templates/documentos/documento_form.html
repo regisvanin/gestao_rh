@@ -2,6 +2,7 @@
 {% load bootstrap %}
 {% block main %}
 
+{{ form.errors }}
 <!-- adicionar o enctype para evitar o erro de object -->
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}

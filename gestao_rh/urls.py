@@ -12,8 +12,8 @@ from apps.registro_hora_extra.api.views import RegistroHoraExtraViewSet
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet) # rota para acessar os usuarios
 router.register(r'groups', views.GroupViewSet) # rota para acesar os grupo
-router.register(r'api/funcionarios', FuncionarioViewSet)
-router.register(r'api/horas-extras', RegistroHoraExtraViewSet)
+router.register(r'api/funcionario', FuncionarioViewSet)
+router.register(r'api/bancohoras', RegistroHoraExtraViewSet)
 
 urlpatterns = [
     path('', include('apps.core.urls')),
@@ -24,7 +24,6 @@ urlpatterns = [
     path('horas-extras/', include('apps.registro_hora_extra.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    # PRECISA ADICIONAR AS URL DA API
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #ajuste para visualizar o arquivo da imagem
